@@ -38,20 +38,3 @@ MODEL_CLASSES.each_with_index do |model_class, index|
     end
   end
 end
-
-migration MODEL_CLASSES.size + 1, :create_table_ceps do
-  up do
-    create_table :ceps do
-      column :cep, String, length: 255
-      column :endereco, String, length: 255
-      column :bairro, String, length: 255
-      column :cidade, String, length: 255
-      column :estado, String, length: 255
-      column :nome_estado, String, length: 255
-    end
-  end
-
-  down do
-    drop_table :ceps
-  end
-end
